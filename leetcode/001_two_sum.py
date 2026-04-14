@@ -1,13 +1,13 @@
 from typing import List
 
 # LeetCode #1 — Two Sum (Easy)
-# 
+ 
 # Given a list of numbers and a target, find the two numbers that add up
 # to the target and return their positions (indices).
-# 
+
 # Example: nums = [2, 7, 11, 15], target = 9
 # Answer: [0, 1] because nums[0] + nums[1] = 2 + 7 = 9
-#
+
 # My approach: brute force — for each number, check every number after it
 # to see if they add up to the target.
 
