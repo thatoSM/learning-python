@@ -6,7 +6,7 @@ print()
 
 # Ask the user for two numbers
 # input() gets the text from the user, float() turns that txt into a number
-first_number = float(input("Enter the second number: "))
+first_number = float(input("Enter the first number: "))
 second_number = float(float(input("Enter the second number: ")))
 
 # Ask what thy want to do
