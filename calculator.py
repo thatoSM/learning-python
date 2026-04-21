@@ -44,9 +44,9 @@ def show_history():
         print("No calculations yet.")
     else: 
         print("\n=== History ===")
-    for item in history:
-        print(item)
-    print("================\n")
+        for item in history:
+            print(item)
+        print("================\n")
 
 def show_menu():
     """Display the menu of options."""
@@ -64,7 +64,7 @@ print("Welcome to Advanced Calculator")
 
 while True:
     show_menu()
-    choice = input("Choose an option (1-7)")
+    choice = input("Choose an option (1-7): ")
 
     if choice == "7":
         print("Thanks for using the calculator. Goodbye!")
@@ -74,8 +74,8 @@ while True:
         show_history()
         continue
 
-    if choice not in ["1", "2", "3", "4", "5", "6"]:
-        print("Invalid choice. Plase pick a numbr from 1 to 6")
+    if choice not in ["1", "2", "3", "4", "5", "6", "7"]:
+        print("Invalid choice. Plase pick a numbr from 1 to 7")
         continue
 
     # Get two numbers from the user
@@ -104,5 +104,3 @@ while True:
 
     print(f"Result: {record}")
     history.append(record)
-
-
