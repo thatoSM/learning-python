@@ -1,0 +1,913 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+.gitignore
+calculator.py
+hello.py
+leetcode/001_two_sum.py
+leetcode/009_palindrome_number.py
+leetcode/020_valid_parentheses.py
+leetcode/088_merge_sorted_array.py
+leetcode/125_valid_palindrome.py
+leetcode/136_single_number.py
+leetcode/217_contains_duplicate.py
+leetcode/242_valid_anagram.py
+leetcode/344_reverse_string.py
+practice/dictionaries_basics.py
+practice/list_comprehensions.py
+practice/retest_125_valid_palindrome.py
+README.md
+rock_paper_scissors/rock_paper_scissors.py
+task_manager/task_manager.py
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="leetcode/088_merge_sorted_array.py">
+def merge(nums1, m, nums2, n):
+    # Step 1: copy nums2 values into nums1's empty slots
+    # The empty slots in nums1 start at index m and end at index m+n-1
+    # nums2 has n values total
+    for i in range(n):
+        # YOUR CODE: put nums2[i] into nums1 at the right position
+        if i == 0:
+            return nums1.append(nums2[i])
+    
+    # Step 2: sort nums1 in place
+    nums1.sort()
+
+
+# Test cases
+nums1 = [1, 2, 3, 0, 0, 0]
+merge(nums1, 3, [2, 5, 6], 3)
+print(nums1)  # Expected: [1, 2, 2, 3, 5, 6]
+
+nums1 = [1]
+merge(nums1, 1, [], 0)
+print(nums1)  # Expected: [1]
+
+nums1 = [0]
+merge(nums1, 0, [1], 1)
+print(nums1)  # Expected: [1]
+</file>
+
+<file path=".gitignore">
+tasks.json
+</file>
+
+<file path="hello.py">
+print("Hello, World! my name is Thato and i'm becoming a developer.")
+</file>
+
+<file path="leetcode/009_palindrome_number.py">
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        # Shortcut: negative numbers can't be palindromes
+        if x < 0:
+            return False
+        # Convert the number to a string so we can reverse it
+        number_as_text = str(x)
+        # Reverse the string using Python's slice trick
+        reversed_text = number_as_text[::-1]
+        # Compare them — if they match, it's a palindrome
+        if number_as_text == reversed_text:
+            return True
+        else:
+            return False
+</file>
+
+<file path="leetcode/020_valid_parentheses.py">
+# LeetCode #20 — Valid Parentheses (Easy)
+
+# Given a string of brackets, check if they are balanced and properly nested.
+# Valid: "()", "()[]{}", "{[]}"
+# Invalid: "(]", "([)]"
+
+# My approach: use a stack. Push opening brackets onto the stack.
+# When you see a closing bracket, check if it matches the most recent
+# opening bracket on the stack. If not, it's invalid. At the end,
+# the stack must be empty for the string to be valid.
+
+# Key concept: stack (LIFO - Last In, First Out)
+# In Python, a list with .append() and .pop() works as a stack.
+
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        pairs = {')': '(', ']': '[', '}': '{'}
+        
+        for char in s:
+            if char in pairs:
+                if not stack:
+                    return False
+                top = stack.pop()
+                if top != pairs[char]:
+                    return False
+            else:
+                stack.append(char)
+    
+        return len(stack) == 0
+</file>
+
+<file path="leetcode/125_valid_palindrome.py">
+"""
+LeetCode #125 - Valid Palindrome (Easy)
+
+Problem (in my words):
+    Given a string, determine whether it reads the same forward and
+    backward, ignoring punctuation, spaces, and letter case. Return
+    True if it is a palindrome, False otherwise.
+
+    The cleaning rules:
+    - Treat uppercase and lowercase as the same letter
+    - Ignore anything that isn't a letter or number (spaces, commas,
+      punctuation, etc.)
+    - An empty string after cleaning counts as a palindrome
+
+Examples:
+    "A man, a plan, a canal: Panama"  ->  True
+    "race a car"                      ->  False
+    " "                               ->  True   (empty after cleaning)
+
+Constraints:
+    1 <= len(s) <= 200,000
+    s contains only printable ASCII characters
+
+Approach:
+    Two-step solution.
+    1. Clean the string: lowercase everything and keep only alphanumeric
+       characters. Used a generator expression with .isalnum() to filter.
+    2. Compare the cleaned string to its reverse using slice [::-1].
+
+What I learned:
+    - .lower() returns a new lowercase string (transforms)
+    - .isalnum() checks if a character is letter/number (returns bool)
+    - Methods that CHECK vs methods that TRANSFORM behave differently
+    - "".join(iterable) glues characters back into a string
+    - Generator expression: (c for c in s if c.isalnum()) - lazy, uses
+      less memory than list comprehension for large inputs
+    - TypeError "object is not subscriptable" means trying to slice
+      something that doesn't support [] (like a bool)
+"""
+
+def isPalindrome(s):
+    cleaned = "".join(c for c in s.lower() if c.isalnum())
+    return cleaned == cleaned[::-1]
+
+print(isPalindrome("A man, a plan, a canal: Panama"))  
+print(isPalindrome("race a car"))                       
+print(isPalindrome(" "))
+</file>
+
+<file path="leetcode/136_single_number.py">
+"""
+LeetCode #136 - Single Number (Easy)
+
+You're given an array of integers. Every number appears exactly twice, except for one number which appears only once. Find that single number.
+Examples
+Input:  [2, 2, 1]
+Output: 1
+Explanation: 1 is the only number that doesn't have a pair.
+
+Input:  [4, 1, 2, 1, 2]
+Output: 4
+Explanation: 1 and 2 both appear twice. 4 appears once.
+
+Input:  [1]
+Output: 1
+Explanation: There's only one number, so it's the single one.
+Constraints
+
+1 ≤ length of nums ≤ 30,000
+Every element appears exactly twice except for one element which appears once
+The array always has at least one element
+
+Approach:
+    Use a set as a "pairing tracker." Walk through nums once.
+    For each number, if it's already in the set, remove it
+    (we found its pair). If it's not, add it. The number that
+    has no pair will be the only one left in the set at the end.
+"""
+def singleNumber(nums):
+    seen = set()
+
+    for n in nums:
+        if n in seen:
+            seen.remove(n)
+        else:
+            seen.add(n)
+    return seen.pop()
+
+print(singleNumber([2, 2, 1]))           # Expected: 1
+print(singleNumber([4, 1, 2, 1, 2]))     # Expected: 4
+print(singleNumber([1]))                  # Expected: 1
+</file>
+
+<file path="leetcode/242_valid_anagram.py">
+# LeetCode #242 — Valid Anagram (Easy)
+
+# Check if two strings are anagrams (same letters, different order).
+# "listen" and "silent" are anagrams.
+# "hello" and "world" are not.
+
+# Examples:
+#   "anagram", "nagaram" → True
+#   "rat", "car" → False
+
+# My approach: count letters in each string using dictionaries.
+# If both dictionaries have the same letter counts, they're anagrams.
+
+# Key concept: dictionary counting pattern.
+# counts[key] = counts.get(key, 0) + 1
+# This is used in hundreds of problems — memorise it.
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+        
+        count_s = {}
+        for letter in s:
+            count_s[letter] =  count_s.get(letter, 0) + 1
+
+        count_t = {}
+        for letter in t:
+            count_t[letter] =  count_t.get(letter, 0) + 1
+
+        return count_s == count_t
+</file>
+
+<file path="leetcode/344_reverse_string.py">
+from typing import List
+# LeetCode #344 — Reverse String (Easy)
+
+# Reverse a list of characters in-place.
+# "In-place" means modify the original list, don't create a new one.
+# O(1) memory means only use a few extra variables, not a whole new list.
+
+# Examples:
+#   ["h","e","l","l","o"] → ["o","l","l","e","h"]
+#   ["H","a","n","n","a","h"] → ["h","a","n","n","a","H"]
+
+# My approach: two pointers.
+# Start one pointer at the beginning and one at the end.
+# Swap the values they point to.
+# Move both pointers toward the middle.
+# Stop when they meet.
+
+def reverseString(self, s: List[str]) -> None:
+    """
+    Do not return anything, modify s in-place instead.
+    """
+    left = 0
+    right = len(s) - 1
+
+    while left < right:
+        s[left], s[right] = s[right], s[left]
+
+        left += 1
+        right -= 1
+</file>
+
+<file path="practice/dictionaries_basics.py">
+"""
+Dictionaries basics — lower-pressure practice.
+
+Mapping key -> value. Faster than lists for lookups.
+"""
+print("Exercise 1: Create and read")
+
+person = {
+    "name": "Thato",
+    "age": 19,
+    "city": "Johannesburg"
+}
+
+# Print just the name
+print(person["name"])
+
+# Print just the city
+print(person["city"])
+
+print()
+
+print("Exercise 2: Add and update")
+
+person["country"] = "South Africa"   # add new key
+person["age"] = 20                    # update existing
+
+print(person)
+print()
+
+print("Exercise 3: Loop over keys")
+
+for key in person:
+    print(key)
+print()
+
+print("Exercise 4: Loop over key-value pairs")
+
+for key, value in person.items():
+    print(f"{key}: {value}")
+print()
+
+print("Exercise 5: Safe lookups")
+
+print(person.get("name", "Unknown"))         # exists → Thato
+print(person.get("phone", "Not provided"))   # missing → Not provided
+print(person.get("country", "Unknown"))      # exists → South Africa
+print()
+
+print("Exercise 6: Counting letters")
+
+word = "mississippi"
+counts = {}
+
+# For each letter in word, increment its count in counts
+# (use .get() with default 0 to handle the "first time seeing" case)
+for letter in word:
+    counts[letter] = counts.get(letter, 0) + 1
+
+print(counts)
+print()
+</file>
+
+<file path="practice/list_comprehensions.py">
+"""
+Day 23 - List Comprehension practice
+
+Goal: build production memory for list comprehension syntax.
+Each section shows the for-loop version first (what I already know), then the list comprehension version (the new shortcut).
+"""
+# Exercise 1: Squares
+print("Exercise 1: Squares")
+
+numbers = [1, 2, 3, 4, 5]
+
+squares_loop = []
+for n in numbers:
+    squares_loop.append(n * n)
+
+print("For loop:     ", squares_loop)
+
+squares_comp = [n * n for n in numbers]
+
+print("Comprehension:", squares_comp)
+print()
+
+# Exercise 2: Doubling
+print("Exercise 2: Doubling")
+
+values = [10, 20, 30, 40]
+
+doubled_loop = []
+for a in values:
+    doubled_loop.append(a * 2)
+
+doubled_comp = [a * 2 for a in values]  # YOUR CODE HERE — replace [] with the comprehension
+
+print("For loop:    ", doubled_loop)
+print("Comprehension:", doubled_comp)
+print()
+
+# Exercise 3: Uppercase strings
+print("Exercise 3: Uppercase strings")
+
+languages = ["python", "java", "rust"]
+
+upper_loop = []
+for l in languages:
+    upper_loop.append(l.upper())
+
+upper_comp = [l.upper() for l in languages]
+
+print("For loop: ", upper_loop)
+print("Comprehension: ", upper_comp)
+print()
+
+# Exercise 4: Lengths
+print("Exercise 4: Lengths")
+
+words = ["hi", "world", "Python"]
+
+length_loop = []
+for w in words:
+    length_loop.append(len(w))
+
+length_comp = [len(w) for w in words]
+
+print("For loop:     ", length_loop)
+print("Comprehension:", length_comp)
+print()
+
+# Exercise 5: Even numbers only
+print("Exercise 5: Even numbers only")
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+evens_loop = []
+for n in numbers:
+    if n % 2 == 0:
+        evens_loop.append(n)
+
+evens_comp = [n for n in numbers if n % 2 == 0] 
+
+print("For loop:     ", evens_loop)
+print("Comprehension:", evens_comp)
+print()
+
+# Exercise 6: Words at least 4 letters long
+print("Exercise 6: Words at least 4 letters long")
+
+words = ["hi", "world", "Python", "no", "code"]
+
+words_loop = []
+for w in words:
+    if (len(w)>=4):
+        words_loop.append(w)
+
+
+words_comp = [w for w in words if len(w)>=4]
+print("For loop:", words_loop)
+print("Comprehension:", words_comp)
+print()
+
+# Exercise 7: Combine transformation and filter
+print("Exercise 7: Combine transformation and filter")
+
+numbers = [1, 2, 3, 4, 5, 6]
+
+result_loop = []
+for n in numbers:
+    if n % 2 == 0:
+        result_loop.append(n * n)
+
+result_comp = [n * n for n in numbers if n % 2 == 0]
+print("For loop:", result_loop)
+print("Comprehension:", result_comp)
+print()
+
+# Exercise 8: Clean a string (the LeetCode #125 logic, rebuilt)
+print("Exercise 8: Clean a string")
+
+messy = "A man, a plan, a canal: Panama"
+
+# For-loop version
+cleaned_loop = ""
+for c in messy.lower():
+    if c.isalnum():
+        cleaned_loop += c
+
+cleaned_chars = [ c for c in messy.lower() if c.isalnum()] 
+
+cleaned_comp = "".join(cleaned_chars)
+
+print("For loop:     ", cleaned_loop)
+print("Comprehension:", cleaned_comp)
+print()
+</file>
+
+<file path="practice/retest_125_valid_palindrome.py">
+"""
+Re-test of LeetCode #125 - Valid Palindrome.
+
+Cold re-attempt of a problem solved earlier this week.
+Tests whether the dictionary/comprehension/cleaning patterns
+are in production memory or just recognition memory.
+
+Result: passed after one round of coaching on Step 1 (cleaning logic).
+The slice [::-1] for reversal was solid from memory.
+The .isalnum() filtering needed one round of structured rebuild.
+"""
+def clean_string(s):   
+   
+    cleaned = []
+    for c in s:
+        if c.isalnum():
+            cleaned.append(c.lower())
+    return "".join(cleaned)
+
+def isPalindrome(s):
+    cleaned = clean_string(s)
+    return cleaned == cleaned[::-1]
+    
+print(isPalindrome("A man, a plan, a canal: Panama"))  # Expected: True
+print(isPalindrome("race a car"))                       # Expected: False
+print(isPalindrome(" "))                                # Expected: True                     # Expected: helloworld
+</file>
+
+<file path="README.md">
+# learning-python
+My Python learning journey
+</file>
+
+<file path="rock_paper_scissors/rock_paper_scissors.py">
+"""
+Rock Paper Scissors - A simple CLI game.
+
+Player plays against the computer. Best of 3 with score tracking.
+Input is validated and normalised (lowercase + trimmed whitespace).
+"""
+
+import random
+
+options = ["rock", "paper", "scissors"]
+
+user_score = 0
+computer_score = 0
+
+while user_score < 2 and computer_score < 2:
+
+    user_choice = input("Choose rock/paper/scissors: ").strip().lower()
+
+    while user_choice not in options:
+        print("Invalid choice. Please type rock, paper, or scissors.")
+        user_choice = input("Choose rock/paper/scissors: ").strip().lower()
+    computer_choice = random.choice(options)
+
+    print(f"You chose: {user_choice}")  
+    print(f"Computer chose: {computer_choice}")  
+
+    if user_choice == computer_choice:
+        print("Tie!")
+    elif (
+    (user_choice == "rock" and computer_choice == "scissors")
+    or (user_choice == "paper" and computer_choice == "rock")
+    or (user_choice == "scissors" and computer_choice == "paper")
+    ):
+        print("You Win!")
+        user_score += 1
+    else:
+        print("Computer Wins!")
+        computer_score += 1
+
+
+    print(f"Score → You: {user_score}, Computer: {computer_score}")
+print()
+
+if user_score >= 2:
+    print("You won the match!")
+else:
+    print("Computer won the match!")
+</file>
+
+<file path="task_manager/task_manager.py">
+"""
+Task Manager - A simple CLI app for managing tasks.
+Tasks persist between sessions by saving to tasks.json
+"""
+
+import json
+import os
+
+class Task:
+    """A single task with a description and completion status."""
+
+    def __init__(self, description, completed=False):
+        """Create a new task."""
+        self.description = description
+        self.completed = completed
+
+    def mark_completed(self):
+        """Mark this task as done."""
+        self.completed = True 
+
+    def __str__(self):
+        """Return a readable string representation of the task."""
+        status = "✓" if self.completed else "○"
+        return f"{status} {self.description}"
+
+TASKS_FILE = "tasks.json"
+
+
+def save_tasks(tasks):
+    """Save the list of tasks to a JSON file."""
+    # Convert each Task object to a dictionary
+    tasks_data = [
+        {"description": t.description, "completed": t.completed}
+        for t in tasks
+    ]
+
+    with open(TASKS_FILE, "w") as f:
+        json.dump(tasks_data, f, indent=2)
+
+
+def load_tasks():
+        """Load tasks from the JSON file. Returns an empty list if file doesn't exist."""
+        if not os.path.exists(TASKS_FILE):
+            return []
+    
+        with open(TASKS_FILE, "r") as f:
+            tasks_data = json.load(f)
+    
+        # Convert each dictionary back to a Task object
+        return [Task(d["description"], d["completed"]) for d in tasks_data]
+
+def main():
+    """Main program loop."""
+    print("=== Task Manager ===")
+    tasks = load_tasks()
+    
+    while True:
+        # Show the menu
+        print("\n1. Add task")
+        print("2. List tasks")
+        print("3. Mark task complete")
+        print("4. Delete task")
+        print("5. Quit")
+        
+        choice = input("\nChoose an option: ").strip()
+        
+        if choice == "1":
+            description = input("Task description: ").strip()
+            if description:
+                tasks.append(Task(description))
+                save_tasks(tasks)
+                print(f"Added: {description}")
+            else:
+                print("Task cannot be empty.")
+        
+        elif choice == "2":
+            if not tasks:
+                print("No tasks yet.")
+            else:
+                print("\nYour tasks:")
+                for i, task in enumerate(tasks, start=1):
+                    print(f"{i}. {task}")
+        
+        elif choice == "3":
+            if not tasks:
+                print("No tasks to mark.")
+                continue
+            
+            for i, task in enumerate(tasks, start=1):
+                print(f"{i}. {task}")
+            
+            try:
+                num = int(input("Number to mark complete: "))
+                if 1 <= num <= len(tasks):
+                    tasks[num - 1].mark_completed()
+                    save_tasks(tasks)
+                    print("Marked complete.")
+                else:
+                    print("Invalid number.")
+            except ValueError:
+                print("Please enter a number.")
+        
+        elif choice == "4":
+            if not tasks:
+                print("No tasks to delete.")
+                continue
+            
+            for i, task in enumerate(tasks, start=1):
+                print(f"{i}. {task}")
+            
+            try:
+                num = int(input("Number to delete: "))
+                if 1 <= num <= len(tasks):
+                    deleted = tasks.pop(num - 1)
+                    save_tasks(tasks)
+                    print(f"Deleted: {deleted.description}")
+                else:
+                    print("Invalid number.")
+            except ValueError:
+                print("Please enter a number.")
+        
+        elif choice == "5":
+            print("Goodbye!")
+            break
+        
+        else:
+            print("Invalid option. Choose 1-5.")
+
+if __name__ == "__main__":
+    main()
+</file>
+
+<file path="leetcode/217_contains_duplicate.py">
+"""
+LeetCode #217 - Contains Duplicate (Easy)
+
+Problem (in my words):
+    Given an array of integers, return True if any value appears at
+    least twice in the array. Return False if every element is unique.
+
+Examples:
+    [1, 2, 3, 1]                       ->  True
+    [1, 2, 3, 4]                       ->  False
+    [1, 1, 1, 3, 3, 4, 3, 2, 4, 2]     ->  True
+
+Constraints:
+    1 <= len(nums) <= 100,000
+    Numbers can be very large or very negative
+
+Approach:
+    Single pass with a set ("seen" tracker).
+    1. Start with an empty set.
+    2. For each number, check if it's already in the set.
+       - If yes -> we've seen it before -> duplicate exists -> return True.
+       - If no -> add it to the set, continue.
+    3. If the loop finishes without finding a repeat -> return False.
+
+What I learned:
+    - Sets are unordered collections with no duplicates allowed
+    - Create empty set with set() (NOT {} which makes a dict)
+    - Add to a set with .add(item)
+    - Check membership with `if item in my_set`
+    - Sets check membership in near-constant time, regardless of size
+      (lists check in linear time, which is much slower for big inputs)
+    - The "have I seen this?" pattern: seen = set() + loop + check + add
+    - Returning early from inside a loop ends the function immediately
+
+Pattern: hash set (membership tracking)
+Time complexity: O(n) - one pass through nums, set ops are O(1)
+Space complexity: O(n) - in worst case, every element ends up in set
+"""
+def containsDuplicate(nums):
+    seen = set()
+
+    for n in nums:
+        if n in seen:
+            return True     
+        else:
+            seen.add(n)
+
+    return False            
+
+print(containsDuplicate([1, 2, 3, 1]))                   # Expected: True
+print(containsDuplicate([1, 2, 3, 4]))                   # Expected: False
+print(containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2])) # Expected: True
+</file>
+
+<file path="calculator.py">
+# Advanced Calculator — Day 13
+# Features: continuous running, functions, error handling, history
+
+# This list will store our calculation history
+history = []
+
+def get_number(prompt):
+    """
+     Ask the user for a number. If they type something that isn't a number,
+    apologise and ask again. Keeps asking until we get a valid number.
+    """
+    while True:
+        try:
+            value = float(input(prompt))
+            return value
+        except ValueError:
+            print("That's not a valid number. Please try again.")
+
+def add(a, b):
+    """Add two numbers and return the result."""
+    return a + b
+
+def subtract(a, b):
+    """Subtract b from a and return the result."""
+    return a - b
+
+def multiply(a, b):
+    """Multiply two numbers and return the result."""
+    return a * b
+
+def divide(a, b):
+    """Divide the two numbers and return the result"""
+    if b == 0:
+        return None
+    return a / b
+
+def power(a, b):
+    """Calculate a to the power b and return the result"""
+    return a ** b
+
+def show_history():
+    """Print the history of calculations."""
+    if len(history) == 0:
+        print("No calculations yet.")
+    else: 
+        print("\n=== History ===")
+        for item in history:
+            print(item)
+        print("================\n")
+
+def show_menu():
+    """Display the menu of options."""
+    print("\n=== calculator ===")
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
+    print("5. Power")
+    print("6. View History")
+    print("7. Quit")
+
+# Main program loop
+print("Welcome to Advanced Calculator")
+
+while True:
+    show_menu()
+    choice = input("Choose an option (1-7): ")
+
+    if choice == "7":
+        print("Thanks for using the calculator. Goodbye!")
+        break
+
+    if choice == "6":
+        show_history()
+        continue
+
+    if choice not in ["1", "2", "3", "4", "5", "6", "7"]:
+        print("Invalid choice. Plase pick a numbr from 1 to 7")
+        continue
+
+    # Get two numbers from the user
+    a = get_number("Enter the first number: ")
+    b = get_number("Enter the second number: ")
+
+    # Do th calculation based on choice
+    if choice == "1":
+        result = add(a, b)
+        record = f"{a} + {b} = {result}"
+    elif choice == "2":
+        result = subtract(a, b)
+        record = f"{a} - {b} = {result}"
+    elif choice == "3":
+        result = multiply(a, b)
+        record = f"{a} * {b} = {result}"
+    elif choice == "4":
+        result = divide(a, b)
+        if result is None:
+            print("Error: Cannot divide by zero.")
+            continue
+        record = f"{a} / {b} = {result}"
+    elif choice == "5":
+        result = power(a, b)
+        record = f"{a} ** {b} = {result}"
+
+    print(f"Result: {record}")
+    history.append(record)
+</file>
+
+<file path="leetcode/001_two_sum.py">
+from typing import List
+
+# LeetCode #1 — Two Sum (Easy)
+ 
+# Given a list of numbers and a target, find the two numbers that add up
+# to the target and return their positions (indices).
+
+# Example: nums = [2, 7, 11, 15], target = 9
+# Answer: [0, 1] because nums[0] + nums[1] = 2 + 7 = 9
+
+# My approach: brute force — for each number, check every number after it
+# to see if they add up to the target.
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for i in range(len(nums)):
+            for j in range(i + 1, len(nums)):
+                if nums[i] + nums[j] == target:
+                    return [i, j]
+</file>
+
+</files>
