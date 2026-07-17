@@ -16,7 +16,7 @@ Output: 1
 Explanation: There's only one number, so it's the single one.
 Constraints
 
-1 ≤ length of nums ≤ 30,000
+1 <= length of nums <= 30,000
 Every element appears exactly twice except for one element which appears once
 The array always has at least one element
 
@@ -26,16 +26,18 @@ Approach:
     (we found its pair). If it's not, add it. The number that
     has no pair will be the only one left in the set at the end.
 """
-def singleNumber(nums):
-    seen = set()
+class Solution:
+    def singleNumber(self, nums):
+        seen = set()
 
-    for n in nums:
-        if n in seen:
-            seen.remove(n)
-        else:
-            seen.add(n)
-    return seen.pop()
+        for n in nums:
+            if n in seen:
+                seen.remove(n)
+            else:
+                seen.add(n)
+        return seen.pop()
 
-print(singleNumber([2, 2, 1]))           # Expected: 1
-print(singleNumber([4, 1, 2, 1, 2]))     # Expected: 4
-print(singleNumber([1]))                  # Expected: 1
+
+print(Solution().singleNumber([2, 2, 1]))           # Expected: 1
+print(Solution().singleNumber([4, 1, 2, 1, 2]))     # Expected: 4
+print(Solution().singleNumber([1]))                 # Expected: 1

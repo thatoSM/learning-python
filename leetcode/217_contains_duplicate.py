@@ -36,17 +36,19 @@ Pattern: hash set (membership tracking)
 Time complexity: O(n) - one pass through nums, set ops are O(1)
 Space complexity: O(n) - in worst case, every element ends up in set
 """
-def containsDuplicate(nums):
-    seen = set()
+class Solution:
+    def containsDuplicate(self, nums):
+        seen = set()
 
-    for n in nums:
-        if n in seen:
-            return True     
-        else:
-            seen.add(n)
+        for n in nums:
+            if n in seen:
+                return True
+            else:
+                seen.add(n)
 
-    return False            
+        return False
 
-print(containsDuplicate([1, 2, 3, 1]))                   # Expected: True
-print(containsDuplicate([1, 2, 3, 4]))                   # Expected: False
-print(containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2])) # Expected: True    
+
+print(Solution().containsDuplicate([1, 2, 3, 1]))                   # Expected: True
+print(Solution().containsDuplicate([1, 2, 3, 4]))                   # Expected: False
+print(Solution().containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2])) # Expected: True

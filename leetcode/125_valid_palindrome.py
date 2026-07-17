@@ -37,11 +37,12 @@ What I learned:
     - TypeError "object is not subscriptable" means trying to slice
       something that doesn't support [] (like a bool)
 """
+class Solution:
+    def isPalindrome(self, s):
+        cleaned = "".join(c for c in s.lower() if c.isalnum())
+        return cleaned == cleaned[::-1]
 
-def isPalindrome(s):
-    cleaned = "".join(c for c in s.lower() if c.isalnum())
-    return cleaned == cleaned[::-1]
 
-print(isPalindrome("A man, a plan, a canal: Panama"))  
-print(isPalindrome("race a car"))                       
-print(isPalindrome(" "))                                
+print(Solution().isPalindrome("A man, a plan, a canal: Panama"))  # Expected: True
+print(Solution().isPalindrome("race a car"))                      # Expected: False
+print(Solution().isPalindrome(" "))                               # Expected: True
