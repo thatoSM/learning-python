@@ -275,9 +275,8 @@ Write 5–10 lines → save (Ctrl+S) → run → check output → continue. **Do
    - **Next re-test:** #88 cold re-test ~Day 35 (in practice/). Stretch goal: solve WITHOUT .sort() — three-pointer merge from the back.
 - **4 projects shipped:** Calculator v2, CLI Task Manager, Rock Paper Scissors v3, LeetCode solutions repo.
 - **fast.ai L1–4 watched** (top-down, no code-along yet).
-- **In progress:** LeetCode #88 Merge Sorted Array. Last sticking point: assigning to specific list positions (`nums[i] = value`) vs `.append()`, and what `.sort()` does — explained; apply the fix and finish #88 next.
 
-**LeetCode patterns done (8 of ~15):** arrays+nested loops (#1), string manipulation (#9, #125), stacks (#20), two pointers (#344, #125), dictionary counting (#242), hash set membership (#217), hash set pair cancellation (#136). In progress: two-array index work (#88).
+**LeetCode patterns done (9 of ~15):** arrays+nested loops (#1), string manipulation (#9, #125), stacks (#20), two pointers (#344, #125), dictionary counting (#242), hash set membership (#217), hash set pair cancellation (#136). In progress: two-array index work (#88).
 **Still to cover at Easy:** sliding window, binary search, linked lists, recursion basics, trees DFS/BFS, DP intro, greedy.
 
 **Foundation projects: 4 of 7 shipped.** Remaining: Password Generator (#3), Weather CLI (#5, first API — month 2), Portfolio Website v1 (#7, month 3).
