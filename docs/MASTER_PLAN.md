@@ -33,6 +33,35 @@ Execute a 24-month structured plan to graduate as a competitive **AI Engineer** 
 **Longer-term (months 18–24+):** Field Deployed Engineer (FDE) positioning, international remote. FDE is a realistic Year-2-to-4 target, NOT a fresh-graduate first job.
 
 ---
+## 1.5 NORTH STAR — Beyond the Plan (added Day 31+, July 2026)
+
+**The 24-month plan is a floor, not a ceiling.** Its goals (Study Companion,
+AWS certs, first dev role) are checkpoints, not the destination. What I'm
+actually building is the general capability to create things bigger and
+better than I can currently imagine — my own products, companies, systems
+that don't exist yet.
+
+**Why the plan still rules day-to-day:** ambition without foundations
+produces nothing shippable. Every locked decision and every rep in this
+plan compounds into the exact skillset that makes "greater than I could
+imagine" possible: idea → architecture → working code → deployed product
+→ real users. The discipline IS the unlock.
+
+**Rules for big ideas:**
+1. When a big idea strikes, WRITE IT DOWN here (Idea Vault below) —
+   never act on it mid-stride.
+2. Big ideas get evaluated at monthly retrospectives only, with the
+   structured-justification process for roadmap changes.
+3. "Beyond the plan" never means "instead of the plan." Skipping
+   foundations to chase an idea breaks the compounding.
+4. After graduation + first role, this vault becomes the source for
+   what I build next.
+
+**Idea Vault:**
+- SA Universal Translator (deferred SaaS — already logged)
+- AI CV Reviewer for SA graduates (deferred SaaS — already logged)
+- SmallBiz AI via WhatsApp (deferred SaaS — already logged)
+- [new ideas go here, one line each, with date]
 
 ## 2. WHO I AM / CONSTRAINTS
 
