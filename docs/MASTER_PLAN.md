@@ -3,9 +3,9 @@
 **This is my single source of truth.** If I lose access to Claude (temporarily or otherwise), I open this file and keep going. Nothing here depends on any one tool or any one AI. Everything I need to not stall is in this document.
 
 - **Owner:** Thato — Year 2 BSc IT (Software Engineering), Eduvos, South Africa (Johannesburg)
-- **Last recorded position:** Day 31 (LeetCode #88 Merge Sorted Array in progress)
-- **CURRENT DAY:** _____ (← update this every session)
-- **File last updated:** 17 July 2026
+- **Last recorded position:** Day 32 — LeetCode #88 SOLVED (9 problems total)
+   - **CURRENT DAY:** 32
+   - **File last updated:** 19 July 2026
 
 ---
 
@@ -271,7 +271,8 @@ Write 5–10 lines → save (Ctrl+S) → run → check output → continue. **Do
 
 - **30 consecutive days** of structured work completed.
 - **23 GitHub commits** on `learning-python`.
-- **8 LeetCode solved:** #1, #9, #20, #344, #242, #125, #217, #136 (+ #125 retest passed Day 25).
+- **9 LeetCode solved:** #1, #9, #20, #344, #242, #125, #217, #136, #88 (+ #125 retest passed Day 25).
+   - **Next re-test:** #88 cold re-test ~Day 35 (in practice/). Stretch goal: solve WITHOUT .sort() — three-pointer merge from the back.
 - **4 projects shipped:** Calculator v2, CLI Task Manager, Rock Paper Scissors v3, LeetCode solutions repo.
 - **fast.ai L1–4 watched** (top-down, no code-along yet).
 - **In progress:** LeetCode #88 Merge Sorted Array. Last sticking point: assigning to specific list positions (`nums[i] = value`) vs `.append()`, and what `.sort()` does — explained; apply the fix and finish #88 next.
@@ -285,7 +286,7 @@ Write 5–10 lines → save (Ctrl+S) → run → check output → continue. **Do
 
 ## 10. IMMEDIATE NEXT ACTIONS (do these first when I return)
 
-1. **Finish LeetCode #88 Merge Sorted Array.** Apply the `nums[i] = value` fix, run it, submit. Write the docstring using the Section 6 format. Commit: `"Solve LeetCode #88 - Merge Sorted Array (two-pointer / index work)"`.
+1. **#88 DONE.** Cold re-test ~Day 35 in practice/. Stretch: no .sort(), three pointers from the back.
 2. **Three days after solving #88, cold re-test it** in `practice/`.
 3. **Enter Month 2 depth:** plan the Weather CLI (my first API call) for an upcoming Saturday build.
 4. **~Week 6–7:** start using Claude (or any AI) as a *code explainer* — explanations only, still no ghost-writing.
