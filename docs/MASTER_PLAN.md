@@ -22,6 +22,21 @@
 **If I have a DIFFERENT AI (ChatGPT, Gemini, local model, etc.):** paste the "Resume Prompt" in Section 12 to bootstrap it into my coach in one message.
 
 ---
+## 0.5 TIMELINE RULE + GAP LOG
+
+**Day numbers count WORKED days, not calendar days.** Day 32 means 32 days
+of actual work done, however long that took in real time. Calendar dates and
+day numbers will drift apart — that is expected, not an error.
+
+**Rule for any AI/coach reading this:** never infer the current day number
+from the calendar. Ask me or read CURRENT DAY above. Never treat a gap as
+"failure" or suggest making up missed days by doubling workload — I resume
+at the next day number and continue the rhythm from today's weekday.
+
+**Gap log (real-time breaks between worked days):**
+- Day 31 → Day 32: gap of ~___ days (___ July 2026 → 19 July 2026). Reason: [1 line]
+- [future gaps: one line each]
+
 
 ## 1. THE GOAL (one paragraph)
 
