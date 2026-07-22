@@ -14,7 +14,7 @@ What it shows:
         0 apple / 1 banana / 2 cherry
 
 Rule for choosing:
-    - Need to know WHERE something is (return an index, number a list, write to
+    - Need to know where something is (return an index, number a list, write to
       a position)  ->  use enumerate
     - Only care about the items themselves (print them, add them up)
       ->  use the plain for loop

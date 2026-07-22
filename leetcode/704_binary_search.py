@@ -20,7 +20,7 @@ Approach:
     gives both the position and the value at that position. Compared each value
     to the target and returned the position immediately on a match. If the loop
     finishes without a match, control falls through to a return of -1 sitting
-    outside the loop. This is correct but does NOT meet the O(log n) requirement
+    outside the loop. This is correct but does not meet the O(log n) requirement
     the problem asks for - a binary search rewrite is planned.
 
 What I learned:
@@ -29,7 +29,7 @@ What I learned:
       index-returning problem
     - The position is what gets returned; the value is what gets compared.
       Mixing these up was my main bug
-    - A search loop returns ONLY on a match. Using an else with a return inside
+    - A search loop returns only on a match. Using an else with a return inside
       the loop kills it after the first element
     - The "not found" return must live outside the loop so it is only reached
       after every element has been checked
