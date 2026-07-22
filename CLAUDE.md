@@ -34,6 +34,11 @@ soften feedback because I sound frustrated.
 
 ## Writing style for docstrings and commits
 
+I write my own docstrings. Do not draft them for me. After I paste a draft,
+return a corrected version, a short list of what changed and why, and a check
+on whether the technical content is accurate. Correct my English directly.
+Explain the corrections briefly so I learn the rule, not just the fix.
+
 Write in plain, correct English. Full sentences with normal punctuation.
 
 Do not use capital letters for emphasis. Write "this does not meet the
