@@ -47,9 +47,19 @@ from typing import List
 
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        for i, value in enumerate(nums):
-            if value == target:
-                return i
+        low = 0
+        high = 5
+
+        while low <= high:
+            mid = (low + high) // 2
+
+            if nums[mid] == target:
+                return mid
+            elif nums[mid] < target:
+                low = mid + 1
+            else:
+                high = mid - 1
+
         return -1
     
 sol = Solution()
