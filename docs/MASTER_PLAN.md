@@ -161,8 +161,9 @@ Current structure (Day 31):
 learning-python/
   calculator/            calculator.py
   docs/                  LEARNING_LOG.md  (+ this MASTER_PLAN.md — see below)
-  leetcode/              001_two_sum.py ... 344_reverse_string.py
-  practice/              dictionaries_basics.py, list_comprehensions.py, retest_125_...
+  leetcode/              001_two_sum.py ... 704_binary_search.py
+  practice/              big_o_demo.py, binary_search_warmup.py, dictionaries_basics.py, enumerate_demo.py,
+                         list_comprehensions.py, retest_125_..., slicing_and_floor_division.py
   rock_paper_scissors/   rock_paper_scissors.py
   task_manager/          task_manager.py, tasks.json
   hello.py
@@ -349,13 +350,13 @@ Write 5–10 lines → save (Ctrl+S) → run → check output → continue. **Do
 
 - **30 consecutive days** of structured work completed.
 - **23 GitHub commits** on `learning-python`.
-- **9 LeetCode solved:** #1, #9, #20, #344, #242, #125, #217, #136, #88 (+ #125 retest passed Day 25).
+- **10 LeetCode solved:** #1, #9, #20, #344, #242, #125, #217, #136, #88, #704 (+ #125 retest passed Day 25).
    - **Next re-test:** #88 cold re-test ~Day 35 (in practice/). Stretch goal: solve WITHOUT .sort() — three-pointer merge from the back.
 - **4 projects shipped:** Calculator v2, CLI Task Manager, Rock Paper Scissors v3, LeetCode solutions repo.
 - **fast.ai L1–4 watched** (top-down, no code-along yet).
 
-**LeetCode patterns done (9 of ~15):** arrays+nested loops (#1), string manipulation (#9, #125), stacks (#20), two pointers (#344, #125), dictionary counting (#242), hash set membership (#217), hash set pair cancellation (#136). In progress: two-array index work (#88).
-**Still to cover at Easy:** sliding window, binary search, linked lists, recursion basics, trees DFS/BFS, DP intro, greedy.
+**LeetCode patterns done (9 of ~15):** arrays+nested loops (#1), string manipulation (#9, #125), stacks (#20), two pointers (#344, #125), dictionary counting (#242), hash set membership (#217), hash set pair cancellation (#136), two-array index work (#88), binary search (#704).
+**Still to cover at Easy:** sliding window, linked lists, recursion basics, trees DFS/BFS, DP intro, greedy.
 
 **Foundation projects: 4 of 7 shipped.** Remaining: Password Generator (#3), Weather CLI (#5, first API — month 2), Portfolio Website v1 (#7, month 3).
 

@@ -4,7 +4,7 @@ My Python foundation work on the road to becoming an AI engineer.
 
 I'm a Year 2 BSc IT (Software Engineering) student at Eduvos, South Africa, working through a structured, long-term plan to build production AI systems. This repository holds the **Year 1 foundations**: core Python fluency, algorithmic problem solving, and small projects. It's a working journal of deliberate practice, not a polished product — the goal is visible, honest progress over time.
 
-For a session-by-session record of the whole journey (including study and video days, not just code), see [`LEARNING_LOG.md`](LEARNING_LOG.md).
+For a session-by-session record of the whole journey (including study and video days, not just code), see [`LEARNING_LOG.md`](docs/LEARNING_LOG.md).
 
 ---
 
@@ -14,12 +14,15 @@ For a session-by-session record of the whole journey (including study and video 
 learning-python/
 ├── leetcode/          # Algorithm solutions, one file per problem
 ├── practice/          # Concept drills and cold re-tests
-├── calculator.py      # Project: calculator with functions, error handling, history
+├── calculator/
+│   └── calculator.py  # Project: calculator with functions, error handling, history
 ├── rock_paper_scissors/
 │   └── rock_paper_scissors.py   # Project: RPS with input validation
 ├── task_manager/      # Project: CLI task manager (classes, JSON, file I/O)
+├── docs/
+│   ├── LEARNING_LOG.md  # Chronological journal of every session
+│   └── MASTER_PLAN.md   # 24-month roadmap and working rules
 ├── hello.py
-├── LEARNING_LOG.md    # Chronological journal of every session
 └── README.md
 ```
 
@@ -35,7 +38,7 @@ Each solution is a standalone file following a fixed convention:
 - **Documented reasoning** — approach, what I learned, the algorithmic pattern, and time/space complexity.
 - **3-digit filename prefix** for ordering: `001_two_sum.py`.
 
-Patterns covered so far: arrays and nested loops, string manipulation, stacks, two pointers, dictionary counting, and hash-set membership.
+Patterns covered so far: arrays and nested loops, string manipulation, stacks, two pointers, dictionary counting, hash-set membership, hash-set pair cancellation, two-array index work, and binary search.
 
 ### Projects
 - **Calculator** — functions, error handling, calculation history, power operation.
@@ -58,8 +61,8 @@ Concept deep-dives (list comprehensions, dictionary basics) and **cold re-tests*
 
 ## Progress snapshot
 
-- **9 LeetCode problems** solved across 7 core easy patterns
+- **10 LeetCode problems** solved across 9 core easy patterns
 - **3 mini-projects** shipped (calculator, RPS, task manager)
 - Foundations in place: functions, classes, file I/O, JSON, comprehensions, sets, error handling
 
-_This snapshot is updated as the work grows. See [`LEARNING_LOG.md`](LEARNING_LOG.md) for the full timeline._
+_This snapshot is updated as the work grows. See [`LEARNING_LOG.md`](docs/LEARNING_LOG.md) for the full timeline._
