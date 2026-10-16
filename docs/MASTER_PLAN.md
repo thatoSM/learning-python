@@ -220,6 +220,11 @@ Three copies in three places = it's effectively impossible to lose.
 
 **When genuinely stuck on a NEW concept:** a primer + a skeleton with blanks is fine — but the blanks must require real thinking. "Fill in this single value" is dictation, not learning. Good model = the Day 25 rebuild of #125: split into `clean_string` and `isPalindrome`, wrote each with structural hints, ran separately.
 
+- Build first when the basics are known: attempt, paste, get one hint.
+- For completely new material, see one worked example first, then attempt. Guessing without a foundation wastes time and locks in wrong habits.
+- Maths method: use only the Eduvos course method (no YouTube or other AI methods). Read the method, work through one worked example line by line until each step makes sense, close it, attempt a similar problem alone, check the answer, ask for one hint if stuck, then self-test at night.
+- Sunday mixed-question sessions stay: one question of each type per module, to practise recognising which method each question needs.
+
 ---
 
 ## 6. WORKFLOW STANDARDS (LOCKED)
