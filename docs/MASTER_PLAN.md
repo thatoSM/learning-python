@@ -78,6 +78,64 @@ imagine" possible: idea → architecture → working code → deployed product
 - SmallBiz AI via WhatsApp (deferred SaaS — already logged)
 - [new ideas go here, one line each, with date]
 
+### Robotics / autonomy / defence-tech track
+Long-term target. Does not replace the near-term goal of a first SA dev role.
+
+Target companies
+- Tesla (Optimus, FSD) and similar robotics/autonomy companies: international, on-site, relocation needed.
+- SA drone/defence-tech such as Milkor (Cape Town): local, no relocation.
+- Apply to several in parallel, not one.
+
+Open decisions for monthly review
+- Whether SA defence roles are in scope. US defence stays rejected. SA defence needs citizenship and security clearance, and some work involves armed systems.
+- Robot vs driving vs aerial focus for the vision project.
+- Programming elective pair: Python pair is strongest for this track (PyTorch, robotics ML); Java pair is strongest for the local SA job market; C# is weakest for this track.
+- Eduvos offers a BSc Honours in IT (Robotics), online full time. Ask the student advisor whether a Software Engineering graduate can enter it and what the prerequisites are.
+
+Eduvos module mapping (strong / partial / weak for this track)
+Year 1
+- Mathematics 1A (ITMTA1), Mathematics 1B (ITMTB1): strong. Linear algebra and calculus underpin vision and robot control. Top priority.
+- Mathematics for Computing (ITMCA1): partial. Discrete maths and logic.
+- Procedural Programming (ITPPA1, C++): strong. Passed with distinction. C++ also came up in other modules. C++ is the main robotics/embedded language.
+- Linux-based Operating System (ITLSA1): strong. Robots and drones run Linux.
+- Computer Network and Security (ITCNA1): strong for defence. Passed with distinction.
+- AI Ethics and Privacy (ITAIA1): strong for autonomy and defence, where safety and ethics are central. Passed with distinction.
+- Computer Network Technologies (ITCTA1): partial. Robot and drone communication links.
+- Cloud Based Technologies (ITCFA1): partial. Cloud training and fleet data.
+- Introduction to Programming (ITPLA1): weak. Basics already covered.
+- Introduction to Information Systems (ITISA1): weak.
+- Computer Skills (Microsoft) (ITSMA1): weak.
+- Non-Technical Skills for IT Professionals (ITPFA1): partial. Teamwork and communication for interviews.
+Year 2
+- Language elective + paired Data Structures and Algorithms: strong (DSA always; language per the elective decision above).
+- Software Process, Architecture Design and Quality Assurance (ITSEA2): strong. Safety-critical systems depend on testing and QA.
+- Software and Security Engineering (ITSSA2): strong for defence (threat modelling, STRIDE, OWASP).
+- Network Security (ITNSA2): strong for defence.
+- Mobile Application Development and Big Data (ITMBA2): strong. On-device apps and large sensor datasets.
+- Web Server Management (ITCOA2): partial. Linux and deployment skills.
+- Database Systems (ITDSA2): partial. Logging and storing sensor/telemetry data.
+- Usability Engineering (ITUEA2): partial. Operator and ground-control interfaces.
+- IT Project Management (ITPMA2): partial.
+Year 3
+- Project: Mobile Application and Web Services (ITMDA3, the capstone): strong if built as a mobile app with on-device computer vision (camera input, model, action). Doubles as the Phase 5 vision project and a portfolio piece.
+- Operating Systems (ITOPA3): strong. Scheduling, memory and concurrency matter on robots.
+- 4IR Technologies (ITTNA3): strong. Covers robotics, IoT and AI.
+- Research Design and Methodology (ITDMA3): partial. Prerequisite for the capstone and useful for an Honours research title.
+- Enterprise Programming elective: follows the language decision.
+- Object Oriented Systems Analysis and Design (ITOOA3): partial.
+- Web Development and e-Commerce (ITECA3): weak.
+- Business Management and Entrepreneurship (ITBEA3): weak for this track.
+Gaps Eduvos does not cover: computer vision, robotics, control systems, embedded systems. These stay self-taught.
+
+Already covered by the roadmap
+- fast.ai vision on PyTorch (Phase 1), HuggingFace (Phase 3), evals and cost tracking (Phase 4).
+
+Candidate additions for monthly review
+1. PyTorch depth: write a training loop from scratch, near the Phase 3 HuggingFace work.
+2. Inference performance: quantization and latency measurement, alongside Phase 4 cost tracking.
+3. Phase 5 differentiator option: a deployed computer-vision project, ideally merged with the capstone.
+4. Application milestone: apply once there are 2-3 strong deployed projects.
+
 ## 2. WHO I AM / CONSTRAINTS
 
 - Year 2 BSc IT (Software Engineering), Eduvos, SA. Lives at home with family (Johannesburg).
